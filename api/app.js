@@ -8,6 +8,9 @@ import usersRoute from './routes/users.js';
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
+//Routes
 app.use('/api/auth', authRoute);
 app.use('/api/hotels', hotelsRoute);
 app.use('/api/rooms', roomsRoute);
