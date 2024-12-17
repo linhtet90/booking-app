@@ -10,3 +10,19 @@ datasource db {
 model customers {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 }
+
+model hotels {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  type          String
+  city          String
+  address       String
+  distance      String
+  photos        String[]
+  title         String
+  description   String
+  rating        Int?
+  rooms         String[]
+  cheapestPrice Float
+  featured      Boolean  @default(false)
+}
