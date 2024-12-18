@@ -7,10 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model customers {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-}
-
 model hotels {
   id            String   @id @default(auto()) @map("_id") @db.ObjectId
   name          String
@@ -25,4 +21,14 @@ model hotels {
   rooms         String[]
   cheapestPrice Float
   featured      Boolean  @default(false)
+}
+
+model users {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  username  String   @unique
+  email     String   @unique
+  password  String
+  isAdmin   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
