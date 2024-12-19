@@ -18,9 +18,22 @@ model hotels {
   title         String
   description   String
   rating        Int?
-  rooms         String[]
+  rooms         rooms[]
   cheapestPrice Float
   featured      Boolean  @default(false)
+}
+
+model rooms {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  price       Float
+  maxPeople   Int
+  description String
+  hotelId     String       @db.ObjectId
+  hotel       hotels       @relation(fields: [hotelId], references: [id])
+  roomNumbers RoomNumber[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
 }
 
 model users {
@@ -31,4 +44,9 @@ model users {
   isAdmin   Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+type RoomNumber {
+  number           Int
+  unavailableDates DateTime[]
 }
