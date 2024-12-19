@@ -30,7 +30,11 @@ export const deleteHotel = async (id) => {
 }
 
 export const getAllHotels = async () => {
-    const hotels = await prisma.hotels.findMany();
+    const hotels = await prisma.hotels.findMany({
+        include: {
+            rooms: true
+        }
+    });
     return hotels;
 }
 
@@ -38,6 +42,9 @@ export const getHotelById = async (id) => {
     const hotel = await prisma.hotels.findUnique({
         where: {
             id
+        },
+        include: {
+            rooms: true
         }
     });
     return hotel;
