@@ -1,9 +1,9 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
-import { createError } from "../utils/error.js";
-import { createUser, getUserByUsername } from "../models/users.js";
+import { createError } from '../utils/error.js';
+import { createUser, getUserByUsername } from '../models/users.js';
 
 dotenv.config();
 
@@ -17,11 +17,11 @@ export const register = async (req, res, next) => {
 		const data = {
 			username,
 			email,
-			password: hash,
+			password: hash
 		};
 
 		await createUser(data);
-		res.status(200).send("User has been created");
+		res.status(200).send('User has been created');
 	} catch (error) {
 		next(error);
 	}
@@ -33,7 +33,7 @@ export const login = async (req, res, next) => {
 
 		const user = await getUserByUsername(username);
 		if (!user) {
-			return next(createError(404, "User not found!"));
+			return next(createError(404, 'User not found!'));
 		}
 
 		//Destructure user
@@ -41,15 +41,16 @@ export const login = async (req, res, next) => {
 
 		const isPasswordCorrect = await bcrypt.compare(password, hash);
 		if (!isPasswordCorrect) {
-			return next(createError(400, "Wrong username or password!"));
+			return next(createError(400, 'Wrong username or password!'));
 		}
 
 		const token = jwt.sign({ id, isAdmin }, process.env.JWT_SECRET_KEY, {
-			expiresIn: process.env.JWT_EXPIRES_IN,
+			expiresIn: process.env.JWT_EXPIRES_IN
 		});
-		res.cookie("access_token", token, {
-			httpOnly: true,
-		})
+		res
+			.cookie('access_token', token, {
+				httpOnly: true
+			})
 			.status(200)
 			.json(others);
 	} catch (error) {

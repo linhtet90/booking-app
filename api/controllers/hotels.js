@@ -1,11 +1,5 @@
-import { createError } from "../utils/error.js";
-import {
-	createHotel,
-	updateHotel,
-	deleteHotel,
-	getAllHotels,
-	getHotelById,
-} from "../models/hotels.js";
+import { createError } from '../utils/error.js';
+import { createHotel, updateHotel, deleteHotel, getAllHotels, getHotelById } from '../models/hotels.js';
 
 export const createHotelController = async (req, res, next) => {
 	try {
@@ -32,7 +26,7 @@ export const deleteHotelController = async (req, res, next) => {
 	try {
 		const { id } = req.params;
 		await deleteHotel(id);
-		res.status(200).json("Hotel has been deleted.");
+		res.status(200).json('Hotel has been deleted.');
 	} catch (err) {
 		next(err);
 	}

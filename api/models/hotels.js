@@ -1,10 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const createHotel = async (data) => {
+export const createHotel = async data => {
 	const hotel = await prisma.hotels.create({
-		data,
+		data
 	});
 
 	return hotel;
@@ -13,39 +13,39 @@ export const createHotel = async (data) => {
 export const updateHotel = async (id, data) => {
 	const hotel = await prisma.hotels.update({
 		where: {
-			id,
+			id
 		},
-		data,
+		data
 	});
 
 	return hotel;
 };
 
-export const deleteHotel = async (id) => {
+export const deleteHotel = async id => {
 	const hotel = await prisma.hotels.delete({
 		where: {
-			id,
-		},
+			id
+		}
 	});
 };
 
 export const getAllHotels = async () => {
 	const hotels = await prisma.hotels.findMany({
 		include: {
-			rooms: true,
-		},
+			rooms: true
+		}
 	});
 	return hotels;
 };
 
-export const getHotelById = async (id) => {
+export const getHotelById = async id => {
 	const hotel = await prisma.hotels.findUnique({
 		where: {
-			id,
+			id
 		},
 		include: {
-			rooms: true,
-		},
+			rooms: true
+		}
 	});
 	return hotel;
 };

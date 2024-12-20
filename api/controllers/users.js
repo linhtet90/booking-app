@@ -1,10 +1,5 @@
-import { createError } from "../utils/error.js";
-import {
-	updateUser,
-	deleteUser,
-	getAllUsers,
-	getUserById,
-} from "../models/users.js";
+import { createError } from '../utils/error.js';
+import { updateUser, deleteUser, getAllUsers, getUserById } from '../models/users.js';
 
 export const updateUserController = async (req, res, next) => {
 	try {
@@ -21,7 +16,7 @@ export const deleteUserController = async (req, res, next) => {
 	try {
 		const { id } = req.params;
 		await deleteUser(id);
-		res.status(200).json("User has been deleted.");
+		res.status(200).json('User has been deleted.');
 	} catch (err) {
 		next(err);
 	}

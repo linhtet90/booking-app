@@ -1,10 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const createUser = async (data) => {
+export const createUser = async data => {
 	const user = prisma.users.create({
-		data,
+		data
 	});
 
 	return user;
@@ -13,19 +13,19 @@ export const createUser = async (data) => {
 export const updateUser = async (id, data) => {
 	const user = await prisma.users.update({
 		where: {
-			id,
+			id
 		},
-		data,
+		data
 	});
 
 	return user;
 };
 
-export const deleteUser = async (id) => {
+export const deleteUser = async id => {
 	const user = await prisma.users.delete({
 		where: {
-			id,
-		},
+			id
+		}
 	});
 };
 
@@ -34,20 +34,20 @@ export const getAllUsers = async () => {
 	return users;
 };
 
-export const getUserById = async (id) => {
+export const getUserById = async id => {
 	const user = await prisma.users.findUnique({
 		where: {
-			id,
-		},
+			id
+		}
 	});
 	return user;
 };
 
-export const getUserByUsername = async (username) => {
+export const getUserByUsername = async username => {
 	const user = prisma.users.findUnique({
 		where: {
-			username,
-		},
+			username
+		}
 	});
 
 	return user;

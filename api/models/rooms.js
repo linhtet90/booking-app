@@ -1,10 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const createRoom = async (data) => {
+export const createRoom = async data => {
 	const room = prisma.rooms.create({
-		data,
+		data
 	});
 
 	return room;
@@ -13,19 +13,19 @@ export const createRoom = async (data) => {
 export const updateRoom = async (id, data) => {
 	const room = await prisma.rooms.update({
 		where: {
-			id,
+			id
 		},
-		data,
+		data
 	});
 
 	return room;
 };
 
-export const deleteRoom = async (id) => {
+export const deleteRoom = async id => {
 	const room = await prisma.rooms.delete({
 		where: {
-			id,
-		},
+			id
+		}
 	});
 };
 
@@ -34,11 +34,11 @@ export const getAllRooms = async () => {
 	return rooms;
 };
 
-export const getRoomById = async (id) => {
+export const getRoomById = async id => {
 	const room = await prisma.rooms.findUnique({
 		where: {
-			id,
-		},
+			id
+		}
 	});
 	return room;
 };

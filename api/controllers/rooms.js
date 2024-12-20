@@ -1,11 +1,5 @@
-import { createError } from "../utils/error.js";
-import {
-	createRoom,
-	updateRoom,
-	deleteRoom,
-	getAllRooms,
-	getRoomById,
-} from "../models/rooms.js";
+import { createError } from '../utils/error.js';
+import { createRoom, updateRoom, deleteRoom, getAllRooms, getRoomById } from '../models/rooms.js';
 
 export const createRoomController = async (req, res, next) => {
 	try {
@@ -32,7 +26,7 @@ export const deleteRoomController = async (req, res, next) => {
 	try {
 		const { id } = req.params;
 		await deleteRoom(id);
-		res.status(200).json("Room has been deleted.");
+		res.status(200).json('Room has been deleted.');
 	} catch (err) {
 		next(err);
 	}
