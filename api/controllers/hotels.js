@@ -1,4 +1,3 @@
-import { createError } from '../utils/error.js';
 import { createHotel, updateHotel, deleteHotel, getAllHotels, getHotelById } from '../models/hotels.js';
 
 export const createHotelController = async (req, res, next) => {

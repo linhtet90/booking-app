@@ -22,7 +22,7 @@ export const updateHotel = async (id, data) => {
 };
 
 export const deleteHotel = async id => {
-	const hotel = await prisma.hotels.delete({
+	await prisma.hotels.delete({
 		where: {
 			id
 		}

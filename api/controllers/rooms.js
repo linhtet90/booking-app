@@ -1,4 +1,3 @@
-import { createError } from '../utils/error.js';
 import { createRoom, updateRoom, deleteRoom, getAllRooms, getRoomById } from '../models/rooms.js';
 
 export const createRoomController = async (req, res, next) => {

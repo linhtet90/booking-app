@@ -22,7 +22,7 @@ export const updateUser = async (id, data) => {
 };
 
 export const deleteUser = async id => {
-	const user = await prisma.users.delete({
+	await prisma.users.delete({
 		where: {
 			id
 		}

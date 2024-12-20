@@ -22,7 +22,7 @@ export const updateRoom = async (id, data) => {
 };
 
 export const deleteRoom = async id => {
-	const room = await prisma.rooms.delete({
+	await prisma.rooms.delete({
 		where: {
 			id
 		}

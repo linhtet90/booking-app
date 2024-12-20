@@ -20,7 +20,7 @@ app.use('/api/rooms', roomsRoute);
 app.use('/api/users', usersRoute);
 
 //Error Handling
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
 	console.error(err);
 
 	const status = err.status || 500;
