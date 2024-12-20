@@ -1,6 +1,11 @@
-import express from 'express';
-import { updateUserController, deleteUserController, getAllUsersController, getUserByIdController } from '../controllers/users.js'
-import { verifyAdmin, verifyToken, verifyUser } from '../utils/verifyToken.js';
+import express from "express";
+import {
+	updateUserController,
+	deleteUserController,
+	getAllUsersController,
+	getUserByIdController,
+} from "../controllers/users.js";
+import { verifyAdmin, verifyToken, verifyUser } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
@@ -16,12 +21,12 @@ const router = express.Router();
 //     res.send('You are admin');
 // })
 
-router.put('/:id', verifyToken, verifyUser, updateUserController);
+router.put("/:id", verifyToken, verifyUser, updateUserController);
 
-router.delete('/:id', verifyToken, verifyUser, deleteUserController);
+router.delete("/:id", verifyToken, verifyUser, deleteUserController);
 
-router.get('/', verifyToken, verifyAdmin, getAllUsersController);
+router.get("/", verifyToken, verifyAdmin, getAllUsersController);
 
-router.get('/:id', verifyToken, verifyUser, getUserByIdController);
+router.get("/:id", verifyToken, verifyUser, getUserByIdController);
 
 export default router;
