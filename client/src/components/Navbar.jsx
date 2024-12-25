@@ -1,16 +1,16 @@
 const Navbar = () => {
   return (
-    <div className="navbar bg-sky-950 h-12 flex justify-center">
-      <nav className="w-full max-w-screen-lg flex justify-between items-center text-white p-3">
+    <div className="navbar flex h-12 justify-center bg-sky-950">
+      <nav className="flex w-full max-w-screen-lg items-center justify-between p-3 text-white">
         <a href="#" className="font-semibold">
           Let&apos;s Go
         </a>
 
-        <ul className="flex ">
-          <li className="ml-5 py-1 px-4 bg-white text-sky-950 cursor-pointer">
+        <ul className="flex">
+          <li className="ml-5 cursor-pointer bg-white px-4 py-1 text-sky-950">
             <a href="">Register</a>
           </li>
-          <li className="ml-5 py-1 px-4 bg-white text-sky-950 cursor-pointer">
+          <li className="ml-5 cursor-pointer bg-white px-4 py-1 text-sky-950">
             <a href="">Login</a>
           </li>
         </ul>

@@ -12,13 +12,13 @@ const Home = () => {
       <Navbar />
       <Header />
 
-      <div className="flex flex-col gap-5 items-center mt-10">
+      <div className="mt-10 flex flex-col items-center gap-5">
         <FeaturedCities />
-        <h1 className="font-bold w-[1024px] ps-3 text-2xl">
+        <h1 className="w-[1024px] ps-3 text-2xl font-bold">
           Browse by property type
         </h1>
         <PropertyList />
-        <h1 className="font-bold w-[1024px] ps-3 text-2xl">
+        <h1 className="w-[1024px] ps-3 text-2xl font-bold">
           Homes guests love
         </h1>
         <FeaturedProperties />

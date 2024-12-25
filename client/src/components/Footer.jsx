@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <div className="footer w-full flex justify-center">
-      <div className="w-full max-w-screen-lg p-3 flex justify-between">
+    <div className="footer flex w-full justify-center">
+      <div className="flex w-full max-w-screen-lg justify-between p-3">
         <div className="flex flex-col gap-3">
           <h1 className="font-semibold">Support</h1>
-          <ul className="leading-loose text-sm">
+          <ul className="text-sm leading-loose">
             <li>Coronavirus (COVID-19) FAQs</li>
             <li>Manage your trips</li>
             <li>Contact Customer Service</li>
@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="font-semibold">Discover</h1>
-          <ul className="leading-loose text-sm">
+          <ul className="text-sm leading-loose">
             <li>Genius loyalty programme</li>
             <li>Seasonal and holiday deals</li>
             <li>Travel articles</li>
@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="font-semibold">Terms and settings</h1>
-          <ul className="leading-loose text-sm">
+          <ul className="text-sm leading-loose">
             <li>Privacy & cookies</li>
             <li>Terms and conditions</li>
             <li>Partner dispute</li>
@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="font-semibold">Partners</h1>
-          <ul className="leading-loose text-sm">
+          <ul className="text-sm leading-loose">
             <li>Extranet login</li>
             <li>Partner help</li>
             <li>List your property</li>
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="font-semibold">About</h1>
-          <ul className="leading-loose text-sm">
+          <ul className="text-sm leading-loose">
             <li>About us</li>
             <li>How we work</li>
             <li>Sustainability</li>

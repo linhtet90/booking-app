@@ -1,7 +1,7 @@
 const FeaturedProperties = () => {
   return (
     <div className="featured-properties flex justify-center">
-      <div className="w-full max-w-screen-lg flex gap-5">
+      <div className="flex w-full max-w-screen-lg gap-5">
         <div className="flex flex-col gap-3">
           <img
             src="https://cf.bstatic.com/xdata/images/hotel/square600/13125860.webp?k=35b70a7e8a17a71896996cd55d84f742cd15724c3aebaed0d9b5ba19c53c430b&o="
@@ -11,7 +11,7 @@ const FeaturedProperties = () => {
           <p>Old Town, Poland</p>
           <p className="font-semibold">Starting from $200</p>
           <div>
-            <span className="bg-sky-950 text-white px-2 py-1 mr-2">8.8</span>
+            <span className="mr-2 bg-sky-950 px-2 py-1 text-white">8.8</span>
             <span>Fabulous</span>
           </div>
         </div>
@@ -24,7 +24,7 @@ const FeaturedProperties = () => {
           <p>Hungary, Budapest</p>
           <p>Starting from $221</p>
           <div>
-            <span className="bg-sky-950 text-white px-2 py-1 mr-2">8.8</span>
+            <span className="mr-2 bg-sky-950 px-2 py-1 text-white">8.8</span>
             <span>Fabulous</span>
           </div>
         </div>
@@ -37,7 +37,7 @@ const FeaturedProperties = () => {
           <p>Santa Maria Novella, Italy</p>
           <p>Starting from $189</p>
           <div>
-            <span className="bg-sky-950 text-white px-2 py-1 mr-2">9.2</span>
+            <span className="mr-2 bg-sky-950 px-2 py-1 text-white">9.2</span>
             <span>Superb</span>
           </div>
         </div>
@@ -50,7 +50,7 @@ const FeaturedProperties = () => {
           <p>Santa Teresa, Brazil</p>
           <p>Starting from $70</p>
           <div>
-            <span className="bg-sky-950 text-white px-2 py-1 mr-2">8.2</span>
+            <span className="mr-2 bg-sky-950 px-2 py-1 text-white">8.2</span>
             <span>Very good</span>
           </div>
         </div>

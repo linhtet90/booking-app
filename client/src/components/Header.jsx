@@ -43,10 +43,10 @@ const Header = () => {
   };
 
   return (
-    <div className="header bg-sky-950 h-80 flex justify-center text-white">
-      <div className="header-container w-full max-w-screen-lg p-3 relative">
-        <ul className="flex gap-14 mb-14 items-center">
-          <li className="border border-white rounded-full py-2 px-4">
+    <div className="header flex h-80 justify-center bg-sky-950 text-white">
+      <div className="header-container relative w-full max-w-screen-lg p-3">
+        <ul className="mb-14 flex items-center gap-14">
+          <li className="rounded-full border border-white px-4 py-2">
             <FontAwesomeIcon icon={faBed} />
             <span className="ml-2">Stays</span>
           </li>
@@ -69,19 +69,19 @@ const Header = () => {
         </ul>
 
         <div className="flex flex-col gap-5">
-          <h1 className="font-bold text-3xl">
+          <h1 className="text-3xl font-bold">
             A lifetime of discounts? It&apos;s Genius.
           </h1>
           <p>
             Get rewarded for your travels - unlock instant savings of 10% or
             more with a free Let&apos;s Go account.
           </p>
-          <button className="self-start bg-sky-600 py-1 px-4 cursor-pointer">
+          <button className="cursor-pointer self-start bg-sky-600 px-4 py-1">
             Sign in / Register
           </button>
         </div>
 
-        <div className="h-10 py-5 absolute -bottom-5  flex justify-around items-center bg-white text-gray-400 border-4 border-yellow-500 rounded-md w-full">
+        <div className="absolute -bottom-5 flex h-10 w-full items-center justify-around rounded-md border-4 border-yellow-500 bg-white py-5 text-gray-400">
           <div>
             <FontAwesomeIcon icon={faBed} />
             <input
@@ -101,7 +101,7 @@ const Header = () => {
             )} to ${format(date[0].endDate, 'dd/MM/yyyy')}`}</span>
             {showDate && (
               <DateRange
-                className="absolute top-10 left-0 z-10"
+                className="absolute left-0 top-10 z-10"
                 editableDateInputs={true}
                 onChange={(item) => setDate([item.selection])}
                 moveRangeOnFirstSelection={false}
@@ -116,12 +116,12 @@ const Header = () => {
               onClick={() => setShowOptions(!showOptions)}
             >{`${options.adult} Adult(s) · ${options.children} Children · ${options.room} Room(s)`}</span>
             {showOptions && (
-              <div className="bg-white text-black absolute top-10 shadow-lg rounded-md px-4 py-2 w-full z-10">
-                <div className="flex justify-between items-center my-2">
+              <div className="absolute top-10 z-10 w-full rounded-md bg-white px-4 py-2 text-black shadow-lg">
+                <div className="my-2 flex items-center justify-between">
                   <span>Adult(s)</span>
                   <div className="flex items-center gap-3">
                     <button
-                      className="border border-sky-500 w-7 h-7 disabled:cursor-not-allowed"
+                      className="h-7 w-7 border border-sky-500 disabled:cursor-not-allowed"
                       onClick={() => handleOptions('adult', 'decrease')}
                       disabled={options.adult <= 1}
                     >
@@ -129,18 +129,18 @@ const Header = () => {
                     </button>
                     <span>{options.adult}</span>
                     <button
-                      className="border border-sky-500 w-7 h-7"
+                      className="h-7 w-7 border border-sky-500"
                       onClick={() => handleOptions('adult', 'increase')}
                     >
                       +
                     </button>
                   </div>
                 </div>
-                <div className="flex justify-between items-center my-2">
+                <div className="my-2 flex items-center justify-between">
                   <span>Children</span>
                   <div className="flex items-center gap-3">
                     <button
-                      className="border border-sky-500 w-7 h-7 disabled:cursor-not-allowed"
+                      className="h-7 w-7 border border-sky-500 disabled:cursor-not-allowed"
                       onClick={() => handleOptions('children', 'decrease')}
                       disabled={options.children <= 0}
                     >
@@ -148,18 +148,18 @@ const Header = () => {
                     </button>
                     <span>{options.children}</span>
                     <button
-                      className="border border-sky-500 w-7 h-7"
+                      className="h-7 w-7 border border-sky-500"
                       onClick={() => handleOptions('children', 'increase')}
                     >
                       +
                     </button>
                   </div>
                 </div>
-                <div className="flex justify-between items-center my-2">
+                <div className="my-2 flex items-center justify-between">
                   <span>Room(s)</span>
                   <div className="flex items-center gap-3">
                     <button
-                      className="border border-sky-500 w-7 h-7 disabled:cursor-not-allowed"
+                      className="h-7 w-7 border border-sky-500 disabled:cursor-not-allowed"
                       onClick={() => handleOptions('room', 'decrease')}
                       disabled={options.room <= 1}
                     >
@@ -167,7 +167,7 @@ const Header = () => {
                     </button>
                     <span>{options.room}</span>
                     <button
-                      className="border border-sky-500 w-7 h-7"
+                      className="h-7 w-7 border border-sky-500"
                       onClick={() => handleOptions('room', 'increase')}
                     >
                       +
@@ -178,7 +178,7 @@ const Header = () => {
             )}
           </div>
           <div>
-            <button className="bg-sky-600 py-1 px-4 cursor-pointer text-white">
+            <button className="cursor-pointer bg-sky-600 px-4 py-1 text-white">
               Search
             </button>
           </div>
